@@ -14,10 +14,17 @@ namespace Laboratory1
         public PictureBox MyPictureBox = null;
         public int Location = 0;
         public Random MyRandom;
-    
 
-    public bool Run()
-    {
-           string )]
+
+        public bool Run()
+        {
+
+        }
+
+
+        public void TakeStartingPosition()
+        {
+
+        }
     }
 }
