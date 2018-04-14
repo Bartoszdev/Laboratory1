@@ -9,22 +9,36 @@ namespace Laboratory1
 {
     public class Greyhound
     {
-        public int StartingPosition;
-        public int RacetrackLenght;
-        public PictureBox MyPictureBox = null;
-        public int Location = 0;
-        public Random MyRandom;
+        public int StartingPosition; // Miejsce ,gdzie rozpoczyna się PictureBox
+        public int RacetrackLenght; // Jak długa jest trasa
+        public PictureBox MyPictureBox = null; //Mój obiekt PictureBox
+        public int Location = 0;// Moje położenie na torze wyścigowym
+        public Random MyRandom; // Instancja klasy Random
 
 
         public bool Run()
         {
+            MyRandom = new Random();
+            MyPictureBox.Left = StartingPosition;
+            MyRandom.Next(1, 4);
+            MyPictureBox.Update();
+
+            if (MyPictureBox.Left >= RacetrackLenght)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
 
         }
 
 
         public void TakeStartingPosition()
         {
-
+            MyPictureBox.Left = StartingPosition;
+         
         }
     }
 }

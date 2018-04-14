@@ -9,18 +9,22 @@ namespace Laboratory1
      public class Bet
 
     {
-        public int Amount;
-        public int Dog;
-        public Guy Bettor;
-
-
-        public string GetDescription()
+        public int Amount; // Ilość postawionych pieniędzy
+        public int Dog; // Numer ,psa na którego postawiono
+        public Guy Bettor;// Facet , który zawarł zakład
+        
+       
+       public int PayOut(int Winner)
         {
-
-        }
-
-        public int PayOut(int Winner)
-        {
+            if (Dog == Winner)
+            {
+                return Amount;
+            }
+            else
+            {
+                return -Amount;
+            }
+            
 
         }
     }
