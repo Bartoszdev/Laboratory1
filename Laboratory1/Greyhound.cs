@@ -18,12 +18,10 @@ namespace Laboratory1
 
         public bool Run()
         {
-            MyRandom = new Random();
-            MyPictureBox.Left = StartingPosition;
-            MyRandom.Next(1, 4);
+            MyPictureBox.Left += MyRandom.Next(1, 4);
             MyPictureBox.Update();
 
-            if (MyPictureBox.Left >= RacetrackLenght)
+            if (MyPictureBox.Left >= RacetrackLenght - MyPictureBox.Width)
             {
                 return true;
             }
@@ -37,6 +35,7 @@ namespace Laboratory1
 
         public void TakeStartingPosition()
         {
+            
             MyPictureBox.Left = StartingPosition;
          
         }

@@ -295,9 +295,10 @@
             // minimumBetLabel
             // 
             this.minimumBetLabel.AutoSize = true;
+            this.minimumBetLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.minimumBetLabel.Location = new System.Drawing.Point(18, 32);
             this.minimumBetLabel.Name = "minimumBetLabel";
-            this.minimumBetLabel.Size = new System.Drawing.Size(35, 13);
+            this.minimumBetLabel.Size = new System.Drawing.Size(51, 16);
             this.minimumBetLabel.TabIndex = 0;
             this.minimumBetLabel.Text = "label1";
             // 

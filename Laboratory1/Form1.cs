@@ -16,11 +16,11 @@ namespace Laboratory1
         Greyhound[] Dogs;
         Bet MyBet;
 
-
+        int guyNumber = 0;
         public Form1()
         {
             InitializeComponent();
-            Random Randomizer = new Random();
+            Random random = new Random();
 
             Bettors = new Guy[3];
             Dogs = new Greyhound[4];
@@ -35,13 +35,13 @@ namespace Laboratory1
             Bettors[2].UpdateLabels();
             Bettors[2].ClearBet();
 
-            minimumBetLabel.Text = "Minimalny zakład :" + numericUpDown1.Value;
+            minimumBetLabel.Text = "Minimalny zakład : " + numericUpDown1.Value;
             nameLabel.Text = "Janek";
 
-            Dogs[0] = new Greyhound() { MyPictureBox = pictureBox2, StartingPosition = pictureBox2.Left, RacetrackLenght = raceTrackPicturebox.Width - pictureBox2.Width, MyRandom = Randomizer };
-            Dogs[1] = new Greyhound() { MyPictureBox = pictureBox3, StartingPosition = pictureBox3.Left, RacetrackLenght = raceTrackPicturebox.Width - pictureBox3.Width, MyRandom = Randomizer };
-            Dogs[2] = new Greyhound() { MyPictureBox = pictureBox4, StartingPosition = pictureBox4.Left, RacetrackLenght = raceTrackPicturebox.Width - pictureBox4.Width, MyRandom = Randomizer };
-            Dogs[3] = new Greyhound() { MyPictureBox = pictureBox5, StartingPosition = pictureBox5.Left, RacetrackLenght = raceTrackPicturebox.Width - pictureBox5.Width, MyRandom = Randomizer };
+            Dogs[0] = new Greyhound() { MyPictureBox = pictureBox2, StartingPosition = pictureBox2.Left, RacetrackLenght = raceTrackPicturebox.Width - pictureBox2.Width, MyRandom = random };
+            Dogs[1] = new Greyhound() { MyPictureBox = pictureBox3, StartingPosition = pictureBox3.Left, RacetrackLenght = raceTrackPicturebox.Width - pictureBox3.Width, MyRandom = random };
+            Dogs[2] = new Greyhound() { MyPictureBox = pictureBox4, StartingPosition = pictureBox4.Left, RacetrackLenght = raceTrackPicturebox.Width - pictureBox4.Width, MyRandom = random };
+            Dogs[3] = new Greyhound() { MyPictureBox = pictureBox5, StartingPosition = pictureBox5.Left, RacetrackLenght = raceTrackPicturebox.Width - pictureBox5.Width, MyRandom = random };
             
         }
 
@@ -64,7 +64,7 @@ namespace Laboratory1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int guyNumber = 0;
+           
             if (joeRadioButton.Checked)
             {
                 guyNumber = 0;
@@ -94,7 +94,9 @@ namespace Laboratory1
 
         private void startButton_Click(object sender, EventArgs e)
         {
+            groupBox1.Enabled = false;
             timer1.Start();
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -102,9 +104,24 @@ namespace Laboratory1
             for (int i = 0; i < Dogs.Length; i++)
                 if (Dogs[i].Run())
                 {
+
                     timer1.Stop();
-                    MessageBox.Show("Chart numer" + MyBet.Dog + "wygrał");
-                    Bettors[i].Collect(i);
+                    i++;
+                    MessageBox.Show("Chart numer " + i + " wygrał", "Zwycięzca!");
+                   // Bettors[guyNumber].Collect(i); 
+                    groupBox1.Enabled = true;
+                    for (int a = 0; a < 4; a++)
+                    {
+                        Dogs[a].TakeStartingPosition();
+                        
+                    }
+                    for (int b = 0; b < 3; b++)
+                    {
+                        Bettors[b].MyRadioButton.Enabled = true;
+                        Bettors[b].MyLabel.Text = Bettors[b].Name + " nie zawarł zakładu";
+                    }
+
+
 
                 }
                 

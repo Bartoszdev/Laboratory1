@@ -16,13 +16,13 @@ namespace Laboratory1
        
        public int PayOut(int Winner)
         {
-            if (Dog == Winner)
+            if (Bettor.MyBet.Dog == Winner)
             {
-                return Amount;
+                return Bettor.MyBet.Amount;
             }
             else
             {
-                return -Amount;
+                return -Bettor.MyBet.Amount;
             }
             
 

@@ -27,12 +27,8 @@ namespace Laboratory1
             }
             else
             {
-                MyLabel.Text = Name + " postawił" + MyBet.Amount + " zł" + " na psa numer " + MyBet.Dog;
+                MyLabel.Text = Name + " postawił " + MyBet.Amount + " zł" + " na psa numer " + MyBet.Dog;
             }
-
-
-
-        
         }
 
 
@@ -52,8 +48,6 @@ namespace Laboratory1
             {
                 return false;
             }
-            
-
         }
 
         public void Collect(int Winner)
@@ -63,8 +57,6 @@ namespace Laboratory1
             MyBet.PayOut(Winner);
             
           }
-
-
         }
     }
 
