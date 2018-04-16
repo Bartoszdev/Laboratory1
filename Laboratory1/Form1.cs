@@ -108,7 +108,11 @@ namespace Laboratory1
                     timer1.Stop();
                     i++;
                     MessageBox.Show("Chart numer " + i + " wygrał", "Zwycięzca!");
-                   // Bettors[guyNumber].Collect(i); 
+                    for (int c = 0; c < 3; c++)
+                    {
+                        Bettors[c].Collect(i);
+                        Bettors[c].UpdateCash();
+                    }
                     groupBox1.Enabled = true;
                     for (int a = 0; a < 4; a++)
                     {

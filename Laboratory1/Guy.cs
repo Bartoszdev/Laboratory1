@@ -21,9 +21,9 @@ namespace Laboratory1
         public void UpdateLabels()
         {
             if (MyBet == null)
-            { 
-            MyRadioButton.Text = Name + " ma " + Cash + " zł";
-            MyLabel.Text = Name + " nie zawarł zakładu";
+            {
+                MyRadioButton.Text = Name + " ma " + Cash + " zł";
+                MyLabel.Text = Name + " nie zawarł zakładu";
             }
             else
             {
@@ -36,11 +36,11 @@ namespace Laboratory1
         {
             MyBet = null;
         }
-        public bool PlaceBet(int amount,int DogToWin)
+        public bool PlaceBet(int amount, int DogToWin)
         {
-            MyBet = new Bet() { Amount = amount , Dog =  DogToWin , Bettor = this };
+            MyBet = new Bet() { Amount = amount, Dog = DogToWin, Bettor = this };
 
-            if(this.MyBet.Bettor.Cash > 5)
+            if (this.MyBet.Bettor.Cash > 5)
             {
                 return true;
             }
@@ -51,13 +51,17 @@ namespace Laboratory1
         }
 
         public void Collect(int Winner)
-         {
-            MyBet = new Bet() { Dog = Winner , Bettor= this};
+        {
 
-            MyBet.PayOut(Winner);
-            
-          }
+            this.Cash += MyBet.PayOut(Winner);
+
+        }
+        public void UpdateCash()
+        {
+            this.MyRadioButton.Text = Name + " ma " + Cash + " zł";
         }
     }
+
+}
 
 

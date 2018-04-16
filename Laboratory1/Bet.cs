@@ -18,11 +18,11 @@ namespace Laboratory1
         {
             if (Bettor.MyBet.Dog == Winner)
             {
-                return Bettor.MyBet.Amount;
+                return Amount;
             }
             else
             {
-                return -Bettor.MyBet.Amount;
+                return  -Amount;
             }
             
 

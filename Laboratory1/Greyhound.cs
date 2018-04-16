@@ -18,7 +18,7 @@ namespace Laboratory1
 
         public bool Run()
         {
-            MyPictureBox.Left += MyRandom.Next(1, 4);
+            MyPictureBox.Left += MyRandom.Next(10, 20);
             MyPictureBox.Update();
 
             if (MyPictureBox.Left >= RacetrackLenght - MyPictureBox.Width)
