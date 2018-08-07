@@ -50,6 +50,7 @@
             this.bobRadioButton = new System.Windows.Forms.RadioButton();
             this.joeRadioButton = new System.Windows.Forms.RadioButton();
             this.minimumBetLabel = new System.Windows.Forms.Label();
+            this.btnHistoria = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.raceTrackPicturebox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -116,6 +117,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnHistoria);
             this.groupBox1.Controls.Add(this.startButton);
             this.groupBox1.Controls.Add(this.numericUpDown2);
             this.groupBox1.Controls.Add(this.numericUpDown1);
@@ -302,6 +304,16 @@
             this.minimumBetLabel.TabIndex = 0;
             this.minimumBetLabel.Text = "label1";
             // 
+            // btnHistoria
+            // 
+            this.btnHistoria.Location = new System.Drawing.Point(804, 19);
+            this.btnHistoria.Name = "btnHistoria";
+            this.btnHistoria.Size = new System.Drawing.Size(75, 23);
+            this.btnHistoria.TabIndex = 17;
+            this.btnHistoria.Text = "Historia";
+            this.btnHistoria.UseVisualStyleBackColor = true;
+            this.btnHistoria.Click += new System.EventHandler(this.btnHistoria_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,6 +366,7 @@
         private System.Windows.Forms.Label joeBetLabel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnHistoria;
     }
 }
 

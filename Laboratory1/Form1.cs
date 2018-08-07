@@ -130,6 +130,12 @@ namespace Laboratory1
                 }
                 
             }
+
+        private void btnHistoria_Click(object sender, EventArgs e)
+        {
+            frmHistoria formatka = new frmHistoria();
+            formatka.Show();
+        }
     }
     }
 
