@@ -12,14 +12,14 @@ namespace Laboratory1
     using System;
     using System.Collections.Generic;
     
-    public partial class dbo_Historia
+    public partial class dbo_History
     {
         public int Id { get; set; }
         public string Zwycięzca { get; set; }
-        public string Pies { get; set; }
-        public string Zakład { get; set; }
-        public string Data { get; set; }
+        public Nullable<int> Pies { get; set; }
+        public Nullable<int> Zakład { get; set; }
+        public Nullable<System.DateTime> Data { get; set; }
         public Nullable<int> IloscPrzed { get; set; }
-        public string IloscPo { get; set; }
+        public Nullable<int> IloscPo { get; set; }
     }
 }

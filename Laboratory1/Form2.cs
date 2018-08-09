@@ -12,7 +12,7 @@ namespace Laboratory1
 {
     public partial class frmHistoria : Form
     {
-        frmHistoria db;
+        HistoryEntities db;
         public frmHistoria()
         {
             InitializeComponent();
@@ -20,7 +20,16 @@ namespace Laboratory1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            this.Close();
+        }
+
+        private void frmHistoria_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dbo_HistoriaDataSet.Historia' table. You can move, or remove it, as needed.
+            // this.historiaTableAdapter.Fill(this.dbo_HistoriaDataSet.Historia);
+            db = new HistoryEntities();
+            dboHistoryBindingSource.DataSource = db.dbo_History.ToList();
+
         }
     }
 }

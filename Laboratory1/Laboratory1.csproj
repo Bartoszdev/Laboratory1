@@ -55,7 +55,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bet.cs" />
-    <Compile Include="dbo_Historia.cs">
+    <Compile Include="Database.cs" />
+    <Compile Include="dbo_HistoriaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbo_HistoriaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbo_History.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
@@ -109,11 +115,23 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="dbo_HistoriaDataSet.xsc">
+      <DependentUpon>dbo_HistoriaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbo_HistoriaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbo_HistoriaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbo_HistoriaDataSet.xss">
+      <DependentUpon>dbo_HistoriaDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\dbo_Historia.datasource" />
+    <None Include="Properties\DataSources\dbo_History.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -134,19 +152,19 @@
     <None Include="Resources\dog.png" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model.Context.cs</LastGenOutput>
       <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

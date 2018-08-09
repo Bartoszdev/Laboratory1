@@ -30,8 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.historiaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbo_HistoriaDataSet = new Laboratory1.dbo_HistoriaDataSet();
             this.dboHistoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.historiaTableAdapter = new Laboratory1.dbo_HistoriaDataSetTableAdapters.HistoriaTableAdapter();
+            this.dboHistoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zwycięzcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.piesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,7 +44,10 @@
             this.iloscPrzedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iloscPoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historiaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbo_HistoriaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dboHistoriaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dboHistoryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -55,11 +62,25 @@
             this.dataDataGridViewTextBoxColumn,
             this.iloscPrzedDataGridViewTextBoxColumn,
             this.iloscPoDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.dboHistoriaBindingSource;
+            this.dataGridView1.DataSource = this.dboHistoryBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(776, 376);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // historiaBindingSource
+            // 
+            this.historiaBindingSource.DataMember = "Historia";
+            this.historiaBindingSource.DataSource = this.dbo_HistoriaDataSet;
+            // 
+            // dbo_HistoriaDataSet
+            // 
+            this.dbo_HistoriaDataSet.DataSetName = "dbo_HistoriaDataSet";
+            this.dbo_HistoriaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dboHistoriaBindingSource
+            // 
+            this.dboHistoriaBindingSource.DataSource = typeof(Laboratory1.dbo_History);
             // 
             // button1
             // 
@@ -71,9 +92,13 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dboHistoriaBindingSource
+            // historiaTableAdapter
             // 
-            this.dboHistoriaBindingSource.DataSource = typeof(Laboratory1.dbo_Historia);
+            this.historiaTableAdapter.ClearBeforeFill = true;
+            // 
+            // dboHistoryBindingSource
+            // 
+            this.dboHistoryBindingSource.DataSource = typeof(Laboratory1.dbo_History);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -128,8 +153,12 @@
             this.MinimizeBox = false;
             this.Name = "frmHistoria";
             this.Text = "Historia";
+            this.Load += new System.EventHandler(this.frmHistoria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historiaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbo_HistoriaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dboHistoriaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dboHistoryBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -138,6 +167,10 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.BindingSource dboHistoriaBindingSource;
+        private dbo_HistoriaDataSet dbo_HistoriaDataSet;
+        private System.Windows.Forms.BindingSource historiaBindingSource;
+        private dbo_HistoriaDataSetTableAdapters.HistoriaTableAdapter historiaTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn zwycięzcaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn piesDataGridViewTextBoxColumn;
@@ -145,6 +178,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iloscPrzedDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iloscPoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource dboHistoriaBindingSource;
+        private System.Windows.Forms.BindingSource dboHistoryBindingSource;
     }
 }

@@ -4,8 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b5262f116ab544d985a039ecea1801a8" Name="Diagram1">
-        <EntityTypeShape EntityType="HistoriaModel.dbo_Historia" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="b79b0cbb715b4790a4bd7af20f6f8381" Name="Diagram1">
+        <EntityTypeShape EntityType="HistoryModel.dbo_History" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

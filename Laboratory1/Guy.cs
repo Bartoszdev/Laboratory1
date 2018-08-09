@@ -15,6 +15,9 @@ namespace Laboratory1
         public int Cash;//Jak dużo pieniędzy posiada
         public RadioButton MyRadioButton;// Moje pole wyboru 
         public Label MyLabel;//Moja etykieta 
+        public Database database;
+        public Guy Bettor;
+        
 
 
 
@@ -52,8 +55,16 @@ namespace Laboratory1
 
         public void Collect(int Winner)
         {
-
-            this.Cash += MyBet.PayOut(Winner);
+            if (this.MyBet.Dog == Winner)
+            {
+                database = new Database();
+                database.AddData(Name, MyBet.Dog, MyBet.Amount, Cash, Cash);
+                this.Cash += MyBet.PayOut(Winner);
+            }
+            else
+            {
+                this.Cash += MyBet.PayOut(Winner);
+            }
 
         }
         public void UpdateCash()

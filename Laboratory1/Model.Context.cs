@@ -13,10 +13,10 @@ namespace Laboratory1
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class HistoriaEntities : DbContext
+    public partial class HistoryEntities : DbContext
     {
-        public HistoriaEntities()
-            : base("name=HistoriaEntities")
+        public HistoryEntities()
+            : base("name=HistoryEntities")
         {
         }
     
@@ -25,6 +25,6 @@ namespace Laboratory1
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<dbo_Historia> dbo_Historia { get; set; }
+        public virtual DbSet<dbo_History> dbo_History { get; set; }
     }
 }
